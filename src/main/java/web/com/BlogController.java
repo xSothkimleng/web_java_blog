@@ -21,10 +21,9 @@ public class BlogController {
 		return connect;
 	}
 	
-	public List<Blog_post> getAllBook() {
+	public List<Blog_post> getAllBlog() {
 		String sql = "SELECT * FROM blogs";
 		Connection connect = getConnection();
-		
 		
 		List<Blog_post> blogs = new ArrayList<Blog_post>();
 		ResultSet rs = null;
@@ -50,6 +49,36 @@ public class BlogController {
 		}
 		
 		return blogs;
-		
 	}
+	
+	public List<Blog_post> getMyBlog(int id){
+		String sql = "SELECT * FROM blogs WHERE author_id =" + id;
+		Connection connect = getConnection();
+		
+		List<Blog_post> blogs = new ArrayList<Blog_post>();
+		ResultSet rs = null;
+		
+		try {
+			Statement statement = connect.createStatement();
+			rs = statement.executeQuery(sql);
+			
+			while(rs.next()) {
+				Blog_post blog = new Blog_post(rs.getInt("id"),
+						rs.getInt("author_id"),
+						rs.getString("title"),
+						rs.getString("description"),
+						rs.getBoolean("is_public"),
+						rs.getString("author_name"));
+				blogs.add(blog);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {connect.close();}catch(SQLException e) {e.printStackTrace();};
+			try {rs.close();}catch(SQLException e) {e.printStackTrace();};
+		}
+		
+		return blogs;
+	}
+
 }
