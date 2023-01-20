@@ -22,7 +22,7 @@
 			</div>
 			<div>
 				<button type="submit" class="btn btn-success">Create Blog</button>
-				<button type="submit" class="btn btn-success">View my Blog</button>
+				<button type="submit" class="btn btn-success"><a href="myBlog.jsp">View my Blog</a></button>
 			</div>
 		</div>
 	</div>
