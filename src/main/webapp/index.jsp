@@ -50,7 +50,6 @@
 	</div>
 </div>
 
-
 <div style="margin-top:5rem;">
 	<% for(int i=0;i<blogs.size();i++){
 	if(blogs.get(i).isIs_public() == true){ %>

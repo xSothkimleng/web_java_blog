@@ -29,29 +29,31 @@
 </div>
 
 <div class="post-container">
-	<form>
+	<form method="post" action="createServlet">
+		<input value="<%=session.getAttribute("id")%>" name="author_id" hidden="true"/>
+		<input value="<%=session.getAttribute("username")%>" name="author_name" hidden="true"/>
 		<div class="mb-3">
 	    	<label for="blog_title" class="form-label">Title</label>
-	    	<input type="text" class="form-control" id="blog_title">
+	    	<input type="text" class="form-control" id="blog_title" name="title">
 	  	</div>
 	  	<div class="mb-3">
 	  		<div class="form-floating">
-	      		<textarea class="form-control" placeholder="Write Your Story Here" id="floatingTextarea" style="height:50vh"></textarea>
+	      		<textarea class="form-control" placeholder="Write Your Story Here" id="floatingTextarea" style="height:50vh" name="description"></textarea>
 	      	  	<label for="floatingTextarea">Description</label>
 	  	  	</div>
 	  </div>
 	  <div class="mb-3">	  
 		  <span>Visibility</span>
 		  <div class="form-check">
-		      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+		      <input class="form-check-input" type="radio" name="visibility" id="flexRadioDefault1" value="true" checked>
 		      <label class="form-check-label" for="flexRadioDefault1">
-		        Public
+		        public
 		      </label>
 		  </div>
 	      <div class="form-check">
-		      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+		      <input class="form-check-input" type="radio" name="visibility" id="flexRadioDefault2" value="false">
 		      <label class="form-check-label" for="flexRadioDefault2">
-		        Private
+		        private
 		      </label>
 	      </div>
 	  </div>
