@@ -10,11 +10,10 @@
 	</head>
 <body>
 
-
 <div class="authFormWrapper">
 	<div class="authForm">
 		<div>
-			<p class="logo-title">Blogginator</p>
+			<p class="logo-title"><a href="index.jsp">Blogginator</a></p>
 		</div>
 		<form >
 		  	<div class="mb-3">
@@ -28,9 +27,7 @@
 		  	<div>
 			  	<button type="submit" class="btn btn-success">Login</button>		  
 		  		<span style="margin-left:1rem;">or</span>
-		  		<a href="/web_java_blog/signup.jsp">
-			  		<div class="btn">sign up</div>
-		  		</a>
+			  	<a href="/web_java_blog/signup.jsp" class="btn">sign up</a>
 		  	</div>
 		</form>
 	</div>

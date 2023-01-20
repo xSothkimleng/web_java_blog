@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,39 +11,29 @@
 	</head>
 <body>
 
-<sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver"
-	url="jdbc:mysql://localhost/web_java_blog"
-	user="root"
-	password="admin" 
-/>
-
 <div class="authFormWrapper">
 	<div class="authForm">
 		<div>
-			<p class="logo-title">Blogginator</p>
+			<p class="logo-title"><a href="index.jsp">Blogginator</a></p>
 			<p style="text-align:center;">Create new Account</p>
 		</div>
-		<form >
+		<form method="post" action="registerServlet">
 		  	<div class="mb-3">
-		    	<label for="Username" class="form-label">Username</label>
-		    	<input type="text" class="form-control" id="Username">
+		    	<label for="username" class="form-label">Username</label>
+		    	<input type="text" class="form-control" id="username" name="username">
 		  	</div>
 		  	<div class="mb-3">
-		    	<label for="exampleInputPassword1" class="form-label">Password</label>
-		    	<input type="password" class="form-control" id="exampleInputPassword1">
+		    	<label for="password" class="form-label">Password</label>
+		    	<input type="password" class="form-control" id="password" name="password">
 		  	</div>
-		  	<div>		  
+		  	<div>
 				<button type="submit" class="btn btn-success">sign Up</button>
 		  		<span style="margin-left:1rem;">or</span>
-		  		<a href="/web_java_blog/login.jsp">
-		  			<div class="btn">login</div>
-		  		</a>
+		  		<a href="/web_java_blog/login.jsp" class="btn">login</a>
 		  </div>
 		</form>
 	</div>
 </div>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
