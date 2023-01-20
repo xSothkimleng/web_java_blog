@@ -51,15 +51,35 @@ a{
 	border-radius:15px;
 }
 
-/* create post page */
-
-.create-post-wrapper{
+.post-container{
 	width:60%;
 	margin:auto;
 	margin-top:5rem;
 	padding:1.5rem;
 	border-radius:15px;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.post-title{
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+.post-thumbnail{
+	
+}
+
+.post-description{
+	overflow:hidden;
+	text-overflow: ellipsis;
+   	display: -webkit-box;
+   	-webkit-line-clamp: 2; /* number of lines to show */
+           	line-clamp: 2; 
+   	-webkit-box-orient: vertical;
+}
+
+.post-author{
+	opacity:0.5;
 }
 
 
