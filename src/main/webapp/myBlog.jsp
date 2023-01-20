@@ -52,8 +52,7 @@
 </div>
 
 <div style="margin-top:5rem;">
-	<% for(int i=0;i<blogs.size();i++){
-	if(blogs.get(i).isIs_public() == true){ %>
+	<% for(int i=0;i<blogs.size();i++){ %>
 		<div class="post-container mb-3" style="margin-top:0;">
 			<div class="post-thumbnail">
 				<div class="post-title"><%= blogs.get(i).getTitle() %></div>
@@ -61,7 +60,7 @@
 				<div class="post-description"><%= blogs.get(i).getDescription() %></div>
 			</div>
 		</div>
-	<%}}%>	
+	<%}%>	
 </div>
 
 
